@@ -1,0 +1,75 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "Debug with ZSim",
+            "remoteType": "zsim",
+            "zsim": {
+                "zxKeyboard": true,
+                "ulaScreen": true,
+                "visualMemory": true,
+                "vsyncInterrupt": true,
+                "memoryModel": "ZX48K"
+            },
+            "sjasmplus": [
+                {
+                    "path": "src/build/main.sld",
+                    "useFiles": true,
+                }
+            ],
+            "history": {
+                "reverseDebugInstructionCount": 1000000,
+                "spotCount": 10,
+                "codeCoverageEnabled": true
+            },
+            "startAutomatically": true,
+            "commandsAfterLaunch": [
+                "-logpoint enable",
+                "-assertion enable",
+                "-wpmem enable"
+            ],
+            "disassemblerArgs": {
+                "esxdosRst": true
+            },
+            "rootFolder": "${workspaceFolder}",
+            //"topOfStack": "stack_top",
+            "load": "src/build/main.sna",
+            "smallValuesMaximum": 513,
+            "tmpDir": ".tmp",
+            "preLaunchTask": "build main"
+        },
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "UnitTest with ZSim",
+            "unitTests": true,
+            "presentation": {
+                "hidden": true
+            },
+            "remoteType": "zsim",
+            "zsim": {
+                "visualMemory": true,
+                "memoryModel": "ZX48K"
+            },
+            "sjasmplus": [
+                {
+                    "path": "src/build/unit_tests.sld",
+                }
+            ],
+            "history": {
+                "codeCoverageEnabled": true
+            },
+            "startAutomatically": true,
+            "commandsAfterLaunch": [
+                "-logpoint enable",
+                "-assertion enable",
+                "-wpmem enable"
+            ],
+            "rootFolder": "${workspaceFolder}",
+            "load": "src/build/unit_tests.sna",
+            "preLaunchTask": "build unit_tests"
+        },
+    ]
+}

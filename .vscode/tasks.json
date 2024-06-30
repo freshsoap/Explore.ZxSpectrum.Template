@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build main",
+            "type": "shell",
+            "command": "sjasmplus",
+            "windows": {
+                    "command": "${workspaceFolder}/tools/sjasmplus/sjasmplus.exe"
+            },
+            "args": [
+                "--outprefix=src/build/",
+                "--sld=src/build/main.sld",
+                "--fullpath", 
+                "src/main.asm",
+            ],
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            // "group": {
+            //     "kind": "build",
+            //     "isDefault": true
+            // }
+        },
+        {
+            "label": "build unit_tests",
+            "type": "shell",
+            "command": "sjasmplus",
+            "windows": {
+                    "command": "${workspaceFolder}/tools/sjasmplus/sjasmplus.exe"
+            },
+            "args": [
+                "--outprefix=src/build/",
+                "--sld=src/build/unit_tests.sld",
+                "--fullpath", 
+                "src/unit_tests.asm",
+            ],
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            // "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

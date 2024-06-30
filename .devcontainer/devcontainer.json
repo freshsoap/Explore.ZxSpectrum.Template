@@ -1,0 +1,7 @@
+{
+  // https://dev.to/n3wt0n/make-it-perfect-how-to-customize-github-codespaces-2ma4
+
+
+    // Run Bash script in .devcontainer directory
+    "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh > ~/post-create.log",
+  }
