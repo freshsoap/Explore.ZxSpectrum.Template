@@ -2,6 +2,8 @@
 
 Let's setup a 48K ZX Spectrum dev environment in GitHub Codespaces - with DeZog 🧮
 
+Note: This debugs and unit tests as at Sun 30 June 2024.
+
 ## Why bother?
 
 Let's make this
@@ -16,7 +18,7 @@ TL:DR
 2. Open the codespace
 3. [Setup the SjASMPlus to compile](#setup-sjasmplus-to-run-in-the-workspace)
 4. `Ctrl-Shift-D` to debug
-   - The ZSim emulator should open and show a little green square
+   - The ZSim emulator should open and show a little magenta square
 6. `Ctrl-Shift-B` to build
 7. Run the unit tests
    - There should be the 2 unit tests for the square showing
